@@ -1,13 +1,14 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
+
 import GameContext from "./contexts/GameContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <HashRouter>
     <GameContext>
       <App />
     </GameContext>
-  </BrowserRouter>
+  </HashRouter>
 );
