@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import miness from "../assets/mines.webp"
+import fortune from "../assets/fortuneOfApples.webp"
 
 
 function Catagory() {
@@ -12,7 +14,7 @@ function Catagory() {
           className="firstGame hover:translate-y-[-5px] duration-200 gameKBC flex flex-col gap-2 "
         >
           <div className="w-36 h-36 bg-white overflow-hidden sm:h-40 sm:w-40 rounded-2xl">
-            <img src="./src/assets/mines.webp" alt="mines" />
+            <img src= {miness} alt="mines" />
           </div>
           <div className="font-semibold text-lg">
            Mines
@@ -26,7 +28,7 @@ function Catagory() {
           className="firstGame hover:translate-y-[-5px] duration-200 gameKBC flex flex-col gap-2 "
         >
           <div className="w-36 h-36 bg-white overflow-hidden sm:h-40 sm:w-40 rounded-2xl">
-            <img src="./src/assets/fortuneOfApples.webp" alt="mines" />
+            <img src={fortune} alt="mines" />
           </div>
           <div className="font-semibold text-lg">
          fortune of apples

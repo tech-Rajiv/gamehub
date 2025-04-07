@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+import diamondd from "../assets/diamond.webp"
+import bombb from "../assets/bomb.webp"
 function CoinStakeLogic({ playerLost, playerWon }) {
   const [gameEnd, setGameEnd] = useState(false);
   const [winAmount, setWinAmount] = useState(0);
@@ -9,12 +10,12 @@ function CoinStakeLogic({ playerLost, playerWon }) {
     let cards = [
       ...Array(21).fill({
         type: "diamonds",
-        url: "./src/assets/diamond.webp",
+        url: diamondd,
         classLi: "w-full opacity-0  object-cover h-full",
       }),
       ...Array(4).fill({
         type: "bombs",
-        url: "./src/assets/bomb.webp",
+        url: bombb,
         classLi: "w-full opacity-0  object-cover h-full",
       }),
     ];

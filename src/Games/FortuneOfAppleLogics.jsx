@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+import apple from "../assets/apple.webp"
+import eatenApple from "../assets/eatenApple.webp"
 function FortuneOfAppleLogics({
   setPlayerWon,
   handelWithdrawModel,
@@ -9,70 +10,70 @@ function FortuneOfAppleLogics({
   const [gameEnd, setgameEnd] = useState(false);
   const [currentVictory, setCurrentVictory] = useState(0);
   let oneBad = [
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
+    { isApple: true, srcUrl:apple, classes: "opacity-0" },
+    { isApple: true, srcUrl: apple, classes: "opacity-0" },
+    { isApple: true, srcUrl: apple, classes: "opacity-0" },
+    { isApple: true, srcUrl: apple, classes: "opacity-0" },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl: eatenApple,
       classes: "opacity-0",
     },
   ];
   let twoBad = [
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
+    { isApple: true, srcUrl: apple, classes: "opacity-0" },
+    { isApple: true, srcUrl: apple, classes: "opacity-0" },
+    { isApple: true, srcUrl: apple, classes: "opacity-0" },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl: eatenApple,
       classes: "opacity-0",
     },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl:eatenApple,
       classes: "opacity-0",
     },
   ];
   let threeBad = [
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
+    { isApple: true, srcUrl: apple, classes: "opacity-0" },
+    { isApple: true, srcUrl: apple, classes: "opacity-0" },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl:eatenApple,
       classes: "opacity-0",
     },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl:eatenApple,
       classes: "opacity-0",
     },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl:eatenApple,
       classes: "opacity-0",
     },
   ];
   let fourBad = [
-    { isApple: true, srcUrl: "./src/assets/apple.webp", classes: "opacity-0" },
+    { isApple: true, srcUrl:apple, classes: "opacity-0" },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl: eatenApple,
       classes: "opacity-0",
     },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl:eatenApple,
       classes: "opacity-0",
     },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl:eatenApple,
       classes: "opacity-0",
     },
     {
       isApple: false,
-      srcUrl: "./src/assets/eatenApple.webp",
+      srcUrl: eatenApple,
       classes: "opacity-0",
     },
   ];
