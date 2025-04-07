@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+body{
+    background: #000;
+    color: white;
+}
+
+body {
+  font-family: "Capriola", sans-serif;
+ 
+}
+
+.btn-outline {
+    @apply outline cursor-pointer  font-medium py-1 px-4 rounded-md ;
+  }
+  .btn-primary {
+    @apply text-white cursor-pointer outline font-medium py-1.5 px-4 rounded-md bg-gray-800 hover:bg-gray-700;
+  }
+  .btn-outline-light {
+    @apply outline cursor-pointer font-medium py-1 px-4 rounded-md hover:bg-gray-200;
+  }
+   
+  .model-cover {
+    @apply absolute top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center;
+  }
+   
+  .model-content {
+    @apply  bg-white px-5 pt-5 min-w-72 pb-10 sm:p-12 m-2 rounded-2xl;
+  }
+   
