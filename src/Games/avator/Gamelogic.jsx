@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
+import GameContext from "../../contexts/GameContext";
 
 function Gamelogic() {
   const [flying, setFlying] = useState(false);
@@ -19,6 +20,8 @@ function Gamelogic() {
   const [playerWin, setPlayerWin] = useState(false);
   const [playerLose, setPlayerLose] = useState(false);
   const [money, setMoney] = useState(0);
+
+  const {setWalletBalance} = useContext(GameContext)
 
   const startLogic = () => {
     //console.log("Target is", targetPoint.current);
@@ -79,22 +82,25 @@ function Gamelogic() {
     <section className="flex flex-col justify-center items-center mt-5">
       <div className="border relative h-72 w-80 rounded-xl">
         <div className="w-full h-full flex justify-center items-end">
-          <div className="absolute flex top-30 items-baseline gap-1 justify-center">
+          <div className="absolute flex top-25 items-baseline gap-1 justify-center">
             <h1 ref={textRef} className="text-6xl">
               {currentScore}x
             </h1>
           </div>
           {planeCrashed && (
-            <div className="text-red-500 top-40 mt-5 text-4xl absolute">
+            <div className="text-red-500 top-40 mt-2 text-3xl absolute">
               Crashed!
             </div>
           )}
           <div ref={iconRef} className="iconWrapper duration-1000 mb-5">
-            {flying ? (
+            {flying && !planeCrashed && (
               <i className="ri-rocket-2-fill text-5xl flying"></i>
-            ) : (
+            )}
+            {!flying && !planeCrashed && (
               <i className="ri-rocket-fill text-3xl"></i>
             )}
+
+            {!flying && planeCrashed && <div>ha</div>}
           </div>
         </div>
       </div>
@@ -134,8 +140,8 @@ function Gamelogic() {
       <div className="animate-bounce mt-5">
         {playerWin && gameStarted && (
           <div>
-            <div className="text-green-500">Congrats u won ${money}</div>
-            <div className="text-center mt-2">50 * {cashedOutAt}x</div>
+            <div className="text-green-500">Congrats u won {money}rs</div>
+            <div className="text-center mt-2">at {cashedOutAt}x</div>
           </div>
         )}
 

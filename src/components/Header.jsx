@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { ContextGame } from '../contexts/GameContext'
+import logo from '../assets/brandLogo.webp'
 
 function Header() {
 
     const {walletBalance} = useContext(ContextGame)
   return (
-    <div className="flex py-5 justify-between px-3 items-center bg-black shadow-2xs rounded-2xl ">
-        <h1 className="text-xl font-semibold">GAMEZILLA</h1>
+    <div className="flex py-5 justify-between px-2 items-center bg-black">
+        <div className=""><img src={logo} className='h-8 w-full' alt="logo" /></div>
         <div className="flex  items-center">
           <div className="flex gap-2 items-center">
             <span className="">

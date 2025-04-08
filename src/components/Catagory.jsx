@@ -2,12 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import miness from "../assets/mines.webp"
 import fortune from "../assets/fortuneOfApples.webp"
-
+import aviator from "../assets/aviator.webp"
 
 function Catagory() {
   return (
     <div className="allGamesHere">
-      <div className="w-full h-full px-5 sm:px-20 grid grid-cols-2 sm:grid-cols-4 justify-center gap-5">
+      <div className="w-full h-full px-5 sm:px-20 grid grid-cols-2 sm:grid-cols-4 justify-center gap-6">
        
         <NavLink
           to={"/mines"}
@@ -18,7 +18,7 @@ function Catagory() {
           </div>
           <div className="font-semibold text-lg">
            Mines
-            <div className="text-base font-normal">
+            <div className="text-sm font-normal">
               Win Upto <span className="text-xl">10x</span>
             </div>
           </div>
@@ -32,7 +32,7 @@ function Catagory() {
           </div>
           <div className="font-semibold text-lg">
          fortune of apples
-            <div className="text-base font-normal">
+            <div className="text-sm font-normal">
               Win Upto <span className="text-xl">10x</span>
             </div>
           </div>
@@ -41,12 +41,12 @@ function Catagory() {
           to={"/aviator"}
           className="firstGame hover:translate-y-[-5px] duration-200 gameKBC flex flex-col gap-2 "
         >
-          <div className="w-36 h-36 bg-white overflow-hidden sm:h-40 sm:w-40 rounded-2xl">
-            <img  alt="avator" />
+          <div className="w-36 h-36 overflow-hidden sm:h-40 sm:w-40 rounded-2xl">
+            <img src={aviator}  alt="avator" />
           </div>
           <div className="font-semibold text-lg">
          Aviator
-            <div className="text-base font-base">
+            <div className="text-sm font-base">
               under development
             </div>
           </div>
