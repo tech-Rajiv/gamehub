@@ -19,8 +19,8 @@ function Header() {
             <i className="ri-wallet-3-fill text-xl ml-2"></i>
           </div>
           <div className="ml-4">
-            <button  className="btn-outline">
-               LOGIN
+            <button  className="btn-outline text-xl">
+               +
             </button>
           </div>
         </div>

@@ -3,9 +3,9 @@ import React, { useState } from "react";
 function Accordion() {
   const faqData = [
     {
-      question: "How many games are currently functional?",
+      question: "How many games will be here?",
       answer:
-        "3 out of 5 games are currently ready and fully functional. The remaining ones are under construction and will be live soon. Patience is a virtue (especially in development).",
+        "3 games are currently ready and fully functional. many more will be live soon. Patience is a virtue (especially in development).",
     },
     {
       question: "Is this a real money game?",

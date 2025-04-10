@@ -11,7 +11,7 @@ body {
 }
 
 .btn-outline {
-    @apply outline cursor-pointer  font-medium py-1 px-4 rounded-md ;
+    @apply outline cursor-pointer  font-medium py-1 px-3 rounded-md ;
   }
   .btn-primary {
     @apply text-white cursor-pointer outline font-medium py-1.5 px-4 rounded-md bg-gray-800 hover:bg-gray-700;

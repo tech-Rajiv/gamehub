@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
-import GameContext from "../../contexts/GameContext";
+import  { ContextGame } from "../../contexts/GameContext";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 
 function Gamelogic() {
   const [flying, setFlying] = useState(false);
@@ -21,7 +22,8 @@ function Gamelogic() {
   const [playerLose, setPlayerLose] = useState(false);
   const [money, setMoney] = useState(0);
 
-  const {setWalletBalance} = useContext(GameContext)
+  const { setWalletBalance , walletBalance} = useContext(ContextGame);
+  const navigate = useNavigate()
 
   const startLogic = () => {
     //console.log("Target is", targetPoint.current);
@@ -40,7 +42,10 @@ function Gamelogic() {
 
     if (value >= targetPoint.current) {
       clearInterval(gameInterval.current);
-      textRef.current.style.color = "red";
+      if(!playerWin){
+        textRef.current.style.color = "red";
+      }
+      
 
       setPlaneCrashed(true);
 
@@ -78,6 +83,7 @@ function Gamelogic() {
     //console.log("Cashed out at", winnings);
   };
 
+ 
   return (
     <section className="flex flex-col justify-center items-center mt-5">
       <div className="border relative h-72 w-80 rounded-xl">
@@ -100,7 +106,7 @@ function Gamelogic() {
               <i className="ri-rocket-fill text-3xl"></i>
             )}
 
-            {!flying && planeCrashed && <div>ha</div>}
+            {!flying && planeCrashed && <i className="ri-rocket-fill text-3xl"></i>}
           </div>
         </div>
       </div>
@@ -113,15 +119,15 @@ function Gamelogic() {
         )}
         {gameStarted && (
           <div className="flex justify-between px-2">
-            <div></div>
-            {planeCrashed ? (
+           
+            {cashedOut ? (
               ""
             ) : (
               <button
                 onClick={cashOut}
                 className="px-4 py-2 border flex justify-center items-center border-green-500 text-green-500 rounded-lg hover:text-white transition duration-300"
               >
-                CashOut {cashedOut ? `${cashedOutAt}` : `${currentScore}`}
+                CashOut at {(currentScore * 50).toFixed(0)}
               </button>
             )}
           </div>
@@ -137,11 +143,12 @@ function Gamelogic() {
           </div>
         )}
       </div>
-      <div className="animate-bounce mt-5">
+      <div className="">
         {playerWin && gameStarted && (
-          <div>
-            <div className="text-green-500">Congrats u won {money}rs</div>
-            <div className="text-center mt-2">at {cashedOutAt}x</div>
+          <div className="text-center">
+            <div className="text-green-500 text-xl">Congrats u won {money}rs</div>
+            
+            
           </div>
         )}
 
@@ -149,6 +156,25 @@ function Gamelogic() {
           <div className="text-red-500">oh no! you lost</div>
         )}
       </div>
+      {playerWin && planeCrashed && (
+        <button
+        onClick={()=>{
+          //console.log(walletBalance,"bef")
+          const newbal = parseInt(walletBalance + money)
+          setWalletBalance(newbal);
+          localStorage.setItem('currentBalance',newbal)
+          navigate(-1)
+          
+        }}
+        className="px-4 mt-5 py-2 border rounded-lg hover:bg-gray-800 transition duration-300"
+      >
+        withdraw {money}
+      </button>
+        )}
+        {
+         playerWin && !planeCrashed &&  <div className=" text-sm mt-5 text-gray-300">please wait...</div>
+        }
+
     </section>
   );
 }

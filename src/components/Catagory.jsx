@@ -19,7 +19,7 @@ function Catagory() {
           <div className="font-semibold text-lg">
            Mines
             <div className="text-sm font-normal">
-              Win Upto <span className="text-xl">10x</span>
+              Win Upto <span className="text-xl">25x</span>
             </div>
           </div>
         </NavLink>

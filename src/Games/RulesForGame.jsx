@@ -8,7 +8,8 @@ function RulesForGame({ rules, setRuleAccepted, setGameStart }) {
   const handelStartGame = () => {
     const gameFees = 50;
     if (chechBox) {
-      const getBalance = parseInt(localStorage.getItem("currentBalance"));
+      const getBalance = parseInt(localStorage.getItem("currentBalance")) || 0 ;
+      //console.log(getBalance,"got bal")
       if (getBalance < gameFees) {
         alert("You don't have enough balance to play the game");
         return;
@@ -17,12 +18,12 @@ function RulesForGame({ rules, setRuleAccepted, setGameStart }) {
       setWalletBalance((prev) => prev - gameFees);
       setRuleAccepted(true);
       setGameStart(true);
-      console.log("okkk");
+     // console.log("okkk");
       return;
     }
     alert("Please accept the rules to start the game");
   };
-  console.log(rules);
+  //console.log(rules);
   return (
     <div className="outline w-full rounded-2xl sm:p-10  p-5 text-center ">
       <h1 className="text-xl font-semibold mb-5">{rules.head}</h1>

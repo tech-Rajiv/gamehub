@@ -5,16 +5,21 @@ import Header from "../components/Header";
 import Catagory from "../components/Catagory";
 import Hero from "../components/Hero";
 import Accordian from "../components/Accordian";
-import Info from "../components/Info";
+
 
 function Home(props) {
-  const { setWalletBalance } = useContext(ContextGame);
-
+  const { setWalletBalance, walletBalance } = useContext(ContextGame);
+   //console.log(walletBalance,setWalletBalance)
   useEffect(() => {
-    const balance = localStorage.getItem("currentBalance");
-    if (balance) {
+    const balance = parseInt(localStorage.getItem("currentBalance"));
+    //console.log(balance,"bef")
+    if (typeof balance === "number") {
       const newBalance = parseInt(localStorage.getItem("currentBalance"));
+    
       setWalletBalance(newBalance);
+    }else{
+     
+      localStorage.setItem('currentBalance',walletBalance)
     }
   }, []);
 

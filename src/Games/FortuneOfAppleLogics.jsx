@@ -101,15 +101,15 @@ function FortuneOfAppleLogics({
   const [boxPosition, setBoxPosition] = useState(75);
   const slideBox = () => {
     setBoxPosition((prev) => parseInt(prev) + 76);
-    console.log(boxPosition, "from fnc");
+   // console.log(boxPosition, "from fnc");
   };
   const checkForVictory = (item) => {
-    console.log("from vu");
+    //console.log("from vu");
     if (item.isApple) {
       slideBox();
       const sound = new Audio("./src/audio/win.mp3");
       setTimeout(() => sound.play(), 50);
-      console.log("won");
+      //console.log("won");
       setShouldBeAt((prev) => prev - 1);
       currentVictory > 1
         ? setCurrentVictory((prev) => prev * 2)
@@ -120,7 +120,7 @@ function FortuneOfAppleLogics({
 
     const sound = new Audio("./src/audio/lose.mp3");
     setTimeout(() => sound.play(), 50);
-    console.log("loseeee");
+    //console.log("loseeee");
     setgameEnd(true);
     setArrayCard((prev) =>
       prev.map((rows, ind) =>
@@ -148,7 +148,7 @@ function FortuneOfAppleLogics({
 
       checkForVictory(item);
     } else {
-      console.log("wrong area start from below");
+      //console.log("wrong area start from below");
     }
   };
 
@@ -160,7 +160,7 @@ function FortuneOfAppleLogics({
   return (
     <div className="">
       <div className="text-center mb-3">
-        $ <span className="text-2xl">{currentVictory}</span>
+        winnings : <span className="text-2xl">{currentVictory}</span>
         <button
           disabled={currentVictory <= 0} // If currentVictory is 0 or less, disable the button
           onClick={handelWithdraw}

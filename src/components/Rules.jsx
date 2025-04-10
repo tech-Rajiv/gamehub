@@ -8,7 +8,7 @@ function Rules({ setRulesChecked }) {
   const handelStartGame = (e) => {
     const gameFees = 50;
     if (chechBox) {
-      const getBalance = parseInt(localStorage.getItem("currentBalance"));
+      const getBalance = parseInt(localStorage.getItem("currentBalance")) || 0;
       if (getBalance < gameFees) {
         alert("You don't have enough balance to play the game");
         return;
@@ -17,7 +17,7 @@ function Rules({ setRulesChecked }) {
       setWalletBalance((prev) => prev - gameFees);
       setRulesShow(false);
       setRulesChecked(true);
-      console.log("okkk");
+      //console.log("okkk");
       return;
     }
     alert("Please accept the rules to start the game");
@@ -41,15 +41,15 @@ function Rules({ setRulesChecked }) {
               Your mission is simple:
             </h2>
             <p className="mb-2 text-start text-gray-200">
-              <i class="ri-money-dollar-box-line text-lg mr-2"></i>one diamond
+              <i className="ri-money-dollar-box-line text-lg mr-2"></i>one diamond
               equals 50rs more
             </p>
             <p className="mb-2 text-start text-gray-200">
-              <i class="ri-money-dollar-box-line text-lg mr-2"></i>Collect as
+              <i className="ri-money-dollar-box-line text-lg mr-2"></i>Collect as
               many diamonds as possible to maximize your rewards.
             </p>
             <p className="mb-2 text-start text-gray-200">
-              <i class="ri-money-dollar-box-line text-lg mr-2"></i>Beware of
+              <i className="ri-money-dollar-box-line text-lg mr-2"></i>Beware of
               bombs! Just one bomb will make you lose everything.
             </p>
 

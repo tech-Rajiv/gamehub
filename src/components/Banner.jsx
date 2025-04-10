@@ -8,11 +8,11 @@ function Banner() {
 
   const handelClick = () => {
     localStorage.setItem("usedBonus", "true");
-    console.log("btnclicked n chmnged storge");
+    //console.log("btnclicked n chmnged storge");
     setUsed(true);
 
     const prev = parseInt(localStorage.getItem("currentBalance"));
-    console.log(prev, "prev");
+    //console.log(prev, "prev");
     if (prev) {
       setWalletBalance((initial) => initial + 1000);
     } else {
