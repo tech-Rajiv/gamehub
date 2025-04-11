@@ -53,10 +53,10 @@ function Accordion() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 px-2 py-10">
+    <div className="max-w-2xl mx-auto mt-10 px-4 py-10">
       <h2 className="text-2xl font-semibold mb-6 text-center">FAQs</h2>
       {faqData.map((item, index) => (
-        <div key={index} className="bg-gray-900 rounded-md py-5 px-5 mb-3">
+        <div key={index} className="bg-gray-900 rounded-md py-5 px-3 mb-3">
           <div
             className="cursor-pointer font-medium"
             onClick={() => toggle(index)}

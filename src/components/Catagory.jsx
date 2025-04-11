@@ -6,8 +6,8 @@ import aviator from "../assets/aviator.webp"
 
 function Catagory() {
   return (
-    <div className="allGamesHere">
-      <div className="w-full h-full px-5 sm:px-20 grid grid-cols-2 sm:grid-cols-4 justify-center gap-6">
+    <div className="allGamesHere max-w-4xl mx-auto">
+      <div className=" w-full h-full px-5 sm:px-20 grid grid-cols-2 sm:grid-cols-3 justify-center gap-6">
        
         <NavLink
           to={"/mines"}
@@ -46,8 +46,8 @@ function Catagory() {
           </div>
           <div className="font-semibold text-lg">
          Aviator
-            <div className="text-sm font-base">
-              under development
+            <div className="text-sm font-normal">
+             Win Upto <span className="text-xl">10x</span>
             </div>
           </div>
         </NavLink>
